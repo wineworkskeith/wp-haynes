@@ -1,0 +1,64 @@
+.c7-btn,
+.button,
+.gform_button,
+button{
+	font-family: $title-font-family;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 16px;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+	background: $black;
+	color: $white;
+	padding: 12px 30px;
+	font-size: 1rem;
+
+	@media #{$large-up}{
+		font-size: 1.125rem;
+		padding: 12px 50px;
+	}
+
+	&:hover,&:focus,&:active{
+		color: $white;
+		background: $black;
+		text-decoration: none;
+	}
+
+	&--inline-block{
+		display: inline-block;
+	}
+} // button
+
+.alt-button{
+	font-family: $title-font-family;
+	font-weight: 700;
+	font-size: 11px;
+	line-height: 13px;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+
+	&:after{
+		content: '';
+		width: 24px;
+		height: 11px;
+		margin-left: 8px;
+		position: relative;
+		display: block;
+		background-image: url('images/icons/arrow.svg');
+	}
+
+	&--white{
+		color: $white;
+		&:after{
+			background-image: url('images/icons/arrow-white.svg');
+		}
+	} // white alt btn
+} // alt button (with arrow)
+
+.center-button{
+	text-align: center;
+}

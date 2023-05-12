@@ -1,0 +1,193 @@
+
+$body-font-family: "Helvetica", sans-serif;
+$title-font-family: "Eyeglass", serif;
+$script-font-family: "HaynesWriting", serif;
+
+
+$template-width: 75rem; // 1200px
+$content-width: $template-width;
+$content-wide-width: 93.75rem; //1500px
+$content-narrow-width: 55rem; //880px
+$content-ultra-narrow-width: 50rem; //800px
+
+$black: #010101; 
+$white: #fff; 
+
+
+$body-background-color: $white;
+$body-color: $black;
+$title-font-color: $black;
+
+$body-color-suisun: $white;
+$title-font-color-suisun: $white;
+
+
+$reverse-background-color: #222;
+$reverse-color: #eee;
+
+$veil-background-color: #222;
+$veil-opacity: 0.4;
+
+$h1-font-size: clamp(1.57rem, 0.75rem + 2.4vw, 2.65rem);
+$h1-font-size-mobile: 1.85rem;
+$h2-font-size:  clamp(1.37rem, 0.75rem + 2.4vw, 2.05rem);
+$h2-font-size-mobile: 1.65rem;
+$h3-font-size:  clamp(1.45rem, 0.75rem + 2.4vw, 1.65rem);
+$h3-font-size-mobile: 1.35rem;	
+$h4-font-size:  clamp(1.27rem, 0.75rem + 2.4vw, 1.45rem);
+$h4-font-size-mobile: 1.2rem;
+$h5-font-size:  clamp(1rem, 0.75rem + 2.4vw, 1.1rem);
+$h5-font-size-mobile: 1rem;
+$h6-font-size: 0.875rem;
+$h6-font-size-mobile: 0.9rem;
+
+$paragraph-font-size: 1.0313rem;
+$paragraph-font-size-mobile: 1rem;
+$paragraph-line-height: 1.5;
+
+$link-color: #999;
+$link-color-hover: #010101;
+
+$navigation-toggle-menu-color: #010101;
+
+$footer-background-color: #333;
+$footer-color: #eee;
+$footer-link-color: #eee;
+$footer-link-color-hover: #fff;
+
+//button color
+$buttonColor: #333;
+$buttonBackground: transparent;
+$buttonOutline: #333;
+
+$buttonColorHover: #111;
+$buttonBackgroundHover: transparent;
+$buttonOutlineHover: #111;
+
+$margin-regular-desktop: 1rem;
+$margin-regular-tablet: 1rem;
+$margin-regular-mobile: 1rem;
+$margin-regular: 1rem;
+
+///////////////////////////////////////////////////
+// Media Queries
+///////////////////////////////////////////////////
+$screen: "only screen";
+
+$small-up: $screen;
+$small-only: "#{$screen} and (max-width: 40em)";
+
+$medium-up: "#{$screen} and (min-width: 40.0625em)";
+$medium-only: "#{$screen} and (min-width: 40.0625em) and (max-width: 64em)";
+
+$large-up: "#{$screen} and (min-width: 64.0625em)";
+$large-only: "#{$screen} and (min-width: 64.0625em) and (max-width: 90em)";
+
+$nav-break-down: "#{$screen} and (max-width: 61.9375em)";
+$nav-break-up: "#{$screen} and (min-width: 62em)";
+
+///////////////////////////////////////////////////
+// Helpers
+///////////////////////////////////////////////////
+.lazy-background{
+	background-image: none !important;
+	background-color: $white;
+}
+
+@mixin clearfix{
+	&:before, &:after{ 
+		content: " "; 
+		display: table; 
+	}
+	
+	&:after{ 
+		clear: both; 
+	}
+}
+
+.clearfix{
+	@include clearfix;
+}
+
+
+.hide-text{
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	
+	a{
+		display: block;
+		height: 100%;
+	}
+}
+
+:root {
+    // --c7-page-width: ;
+    // --c7-page-width-checkout: ;
+    --c7-font-family: #{$body-font-family};
+    --c7-body-text-color: #{$body-color};
+    // --c7-alt-text-color: ;
+    // --c7-font-size: ;
+    // --c7-font-size-sub: ;
+    --c7-heading-font-family: #{$title-font-family};
+    --c7-heading-text-color: #{$body-color};
+    --c7-heading-font-weight: 700;
+
+    --c7-primary-color: #{$black};
+    --c7-primary-color-text: #{$white};
+    --c7-primary-color-dark: #{$black};
+    // --c7-primary-color-focus: ;
+    
+    --c7-link-color: #{$black};
+    // --c7-bg: ;
+    // --c7-bg-alt: ;
+    --c7-border-color: #{$black};
+    --c7-border-radius: 0px;
+    
+    // --c7-loading-bg: ;
+    // --c7-modal-border-radius: ;
+    // --c7-modal-shadow: ;
+    // --c7-overlay-bg: ;
+    // --c7-progress-bar: ;
+    // --c7-pill-bg: ;
+    // --c7-pill-text-color: ;
+
+    // --c7-field-bg: ;
+    --c7-field-border-radius: 0px;
+    // --c7-field-border-color: ;
+    // --c7-field-focus-color: ;
+    // --c7-field-option-selected-color: ;
+    // --c7-field-option-focus-color: ;
+    // --c7-field-placeholder: ;
+
+    --c7-primary-button-bg: #{$black};
+    --c7-primary-button-bg-hover: #{$black};
+    --c7-primary-button-text-color: #{$white};
+    --c7-alt-button-bg: #{$white};
+    --c7-alt-button-bg-hover: #{$white};
+    --c7-alt-button-text-color: #{$black};
+    --c7-button-border-radius: 0px;
+    
+    // --c7-info-bg: ;
+    // --c7-error: ;
+    // --c7-error-bg: ;
+    // --c7-warning: ;
+    // --c7-warning-bg: ;
+    // --c7-success: ;
+    // --c7-success-bg: ;
+
+    --c7-header-text-color: #{$black};
+    // --c7-notification: ;
+    // --c7-cart-count-bg: ;
+    // --c7-cart-count-bg-focus: ;
+    // --c7-cart-count-text-color: ;
+    // --c7-side-cart-shadow: ;
+    // --c7-dropdown-border-radius: ;
+    // --c7-dropdown-shadow: ;
+    // --c7-dropdown-hover: ;
+
+    // --c7-block-bg: ;
+    // --c7-block-border-color: ;
+    // --c7-block-border-radius: ;
+    // --c7-block-shadow: ;
+}

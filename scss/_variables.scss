@@ -7,8 +7,7 @@ $script-font-family: "HaynesWriting", serif;
 $template-width: 75rem; // 1200px
 $content-width: $template-width;
 $content-wide-width: 93.75rem; //1500px
-$content-narrow-width: 55rem; //880px
-$content-ultra-narrow-width: 50rem; //800px
+$content-narrow-width: 51.25rem; //820px
 
 $black: #010101; 
 $white: #fff; 
@@ -154,14 +153,14 @@ $nav-break-up: "#{$screen} and (min-width: 62em)";
 
     // --c7-field-bg: ;
     --c7-field-border-radius: 0px;
-    // --c7-field-border-color: ;
+    --c7-field-border-color: rgba(1,1,1,0.2);
     // --c7-field-focus-color: ;
     // --c7-field-option-selected-color: ;
     // --c7-field-option-focus-color: ;
     // --c7-field-placeholder: ;
 
     --c7-primary-button-bg: #{$black};
-    --c7-primary-button-bg-hover: #{$black};
+    --c7-primary-button-bg-hover: #{$white};
     --c7-primary-button-text-color: #{$white};
     --c7-alt-button-bg: #{$white};
     --c7-alt-button-bg-hover: #{$white};
@@ -175,6 +174,8 @@ $nav-break-up: "#{$screen} and (min-width: 62em)";
     // --c7-warning-bg: ;
     // --c7-success: ;
     // --c7-success-bg: ;
+
+    
 
     --c7-header-text-color: #{$black};
     // --c7-notification: ;
@@ -190,4 +191,7 @@ $nav-break-up: "#{$screen} and (min-width: 62em)";
     // --c7-block-border-color: ;
     // --c7-block-border-radius: ;
     // --c7-block-shadow: ;
+
+    --c7-modal-border-radius: 0px;
+    --c7-overlay-bg: rgba(0,0,0,0.6);
 }

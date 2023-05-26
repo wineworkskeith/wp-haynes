@@ -130,14 +130,15 @@ h1,.h1{
 
 }
 
-h2,.h2{	
+h2,.h2,
+h2.c7-h2{	
 	font-family: $title-font-family;
 	font-size: $h2-font-size;
 	line-height: 1.3;
 	margin-bottom: 0.5em;
 	letter-spacing: 0;
 	color: $title-font-color;
-	font-weight: normal;
+	font-weight: 600;
 
 	// @media #{$medium-up}{
 	// 	font-size: $h2-font-size * 0.85;
@@ -176,7 +177,10 @@ h4,.h4{
 }
 
 
-h5,.h5{
+h5,.h5,
+h5.c7-h5, 
+.c7-account-block__title,
+.c7-checkout__review-block h2.c7-h2{
 	font-family: $title-font-family;
 	font-size: $h5-font-size;
 	line-height: 1.22;
@@ -334,4 +338,17 @@ p a{
 
 .handwritten{
 	font-family: $script-font-family;
+}
+
+h2.c7-h2,
+.c7-account-block__title,
+.c7-checkout__review-block h2.c7-h2{
+	font-size: 16px;
+	letter-spacing: 0.12em;
+	font-weight: 600;
+}
+
+.c7-account-block__title,
+.c7-checkout__review-block h2.c7-h2{
+	margin-bottom: 0;
 }

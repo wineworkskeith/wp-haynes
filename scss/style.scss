@@ -22,11 +22,16 @@ Text Domain: HV
 @import 'navigation';
 @import 'secondary-navigation';
 @import 'footer';
-@import 'slick';
+// @import 'slick';
 @import 'forms';
+@import 'modal';
 
 @import 'page-home';
 @import 'page-404';
 
 @import 'modifyers';
+
+@import 'c7-general';
+@import 'c7-login';
+@import 'c7-subscribe';
 

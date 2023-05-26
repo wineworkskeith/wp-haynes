@@ -1,4 +1,9 @@
 
+	<?php 
+			get_template_part('template-parts/_c7-login-modal');
+			get_template_part('template-parts/_mailing-list-modal');
+
+	?>
 	</main>
 	<footer class="footer">
 		<div class="content-wrapper">

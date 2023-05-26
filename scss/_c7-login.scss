@@ -1,0 +1,59 @@
+.c7-account-login{
+
+    .c7-form__buttons{
+        justify-content: space-between;
+    }
+   
+    &__password-options{
+        text-align: left;
+        margin-top: 20px;
+
+        @media #{$medium-up}{
+            margin-top: 20px;
+        }
+    } // this is the "forgot password" link 
+
+    &__options{
+        display: none;
+    } // this is the "create account" link
+
+    .c7-form.c7-form--login{
+        body.page-template-page-commerce7 &{
+
+            .c7-form__buttons{
+                display: block;
+            }
+            
+            button.c7-btn.c7-btn--primary{
+                background: $white;
+                color: $black;
+
+                &:hover,&:focus,&:active{
+                    background: $black;
+                    color: $white;
+                }
+            } 
+        }
+    } // login form
+}
+
+section.c7-content.c7-account-login{
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.c7-form__buttons button:nth-child(n+2), .c7-form__buttons li:nth-of-type(n+2){
+    @media screen and (max-width: 768px){
+        margin-left: 0;
+    }
+}
+
+.c7-form.c7-form--forgot-password{
+    h1{
+        @media screen and (max-width: 768px){
+            text-align: center;
+        }
+    }
+}

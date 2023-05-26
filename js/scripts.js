@@ -1,38 +1,3 @@
-// If Intersection Observer is not supported
-if (!'IntersectionObserver' in window && !'IntersectionObserverEntry' in window && !'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
-	$('[data-animation]').addClass('is-visible');
-}
-
-// If Internet Explorer Intersection Observer
-if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > -1) {
-	$('[data-animation]').addClass('is-visible');
-}
-
-// Intersection Observer
-setTimeout(function () {
-	if ($('[data-animation]').length) {
-		var elements = document.querySelectorAll('[data-animation]');
-
-		var options = {
-		threshold: 0
-		};
-
-		var observer = new IntersectionObserver(function (entries) {
-		for (var i = 0; i < entries.length; i++) {
-			if (entries[i].isIntersecting) {
-			entries[i].target.classList.add('is-visible');
-			}
-		}
-		}, options);
-
-		for (var i = 0; i < elements.length; i++) {
-		observer.observe(elements[i]);
-		}
-	}
-}, 50);
-
-
-
 //Add class to li to show submenu on click
 var menuItem = document.getElementsByClassName("menu-item-has-children");
 for (var i = 0; i < menuItem.length; i++) {
@@ -110,18 +75,6 @@ jQuery(document).ready(function($) {
 	});
 
 
-	$('#mobile-menu-toggle').on('click',function(event){
-		event.preventDefault();	
-		$('body').toggleClass('show-mobile-nav');
-		MicroModal.show('modal-menu');
-	});
-
-	// Fade in the Suisun landing page:
-	setTimeout(function(){ 
-		$('body.page-template-page-suisun').addClass('loaded');
-	},1000);
-	
-
 	//Add class to li to show submenu on click
 	var menuItem = document.getElementsByClassName("menu-item-has-children");
 	for (var i = 0; i < menuItem.length; i++) {
@@ -145,5 +98,105 @@ jQuery(document).ready(function($) {
 			$(this).children('.toggle-sub-menu').prop( "checked", true );
 		}
 	})
+
+	
+
+
+	
+	var c7Observer = new MutationObserver(function(mutations) {
+		//when loaded do something
+		c7Observer.disconnect();
+
+		// Replace the home "LOGIN" with "MY ACCOUNT"
+	   	if($("body").hasClass('home')){
+			if($('.c7-user-nav__account__name').length > 0){
+				var name = $('.c7-user-nav__account__name').html();
+				name = name.split('<')[0];
+				// $('.home__request__header').append('<a href="/profile/logout" class="c7-account__logout_link">Log Out</a>');
+				$('#menu-item-36 a').text('MY ACCOUNT');
+				$('.home__logged-out').css('display','none');
+				$('#c7-account').append('<a href="/profile/logout" class="c7-account__logout_link">Log Out</a>');
+			}else{
+				$('.c7-user-nav__account__login').on('click',function(event){
+					event.preventDefault();	
+					MicroModal.show('login-modal');
+				});
+				$('.home__logged-in').css('display','none');
+			}
+	   	}else{
+			if($('.c7-user-nav__account__name').length > 0){
+				$('#menu-item-36 a').text('MY ACCOUNT');
+				$('#c7-account').append('<a href="/profile/logout" class="c7-account__logout_link">Log Out</a>');
+			}else{
+				$('.c7-user-nav__account__login').on('click',function(event){
+					event.preventDefault();	
+					MicroModal.show('login-modal');
+				});
+			}
+		}
+	 
+	   c7Observer.observe(document.querySelector("#c7-account"), { childList: true, subtree: true });
+	});
+	// pass in the target node, as well as the observer options, this detects if any child elements change in side #c7-content
+	if($("#c7-account").length > 0){
+		c7Observer.observe(document.querySelector("#c7-account"), { childList: true, subtree: true });
+	}
+
+	$('.footer__menu .menu-item-33').on('click',function(event){
+		event.preventDefault();	
+		MicroModal.show('mailing-list-modal');	
+	});
+
+	$('.home__logged-out__login-link').on('click',function(event){
+		event.preventDefault();	
+		MicroModal.show('login-modal');	
+	});
+
+	
+	
+	// if div with id "numberToGoDownBy" exists:
+	if (document.getElementById('numberToGoDownBy')) {
+
+
+		// Define the target date for the countdown (July 13th, 2023)
+		const targetDate = new Date("2023-07-12");
+
+		// Define the extraDays variable as a multiplier
+		let extraDays = document.getElementById('numberToGoDownBy').innerHTML;
+
+
+		// Get starting date
+		const startingDate = new Date('2023-05-23');
+
+		// get today's date
+		const today = new Date();
+
+		// console.log('Today: ' + today);
+		// console.log('Starting date: ' + startingDate);
+		// console.log('Target date: ' + targetDate);
+
+		const timeDifferenceSinceStart = today.getTime() - startingDate.getTime();
+		let daysSinceStart = Math.ceil(timeDifferenceSinceStart / (1000 * 60 * 60 * 24));
+
+		// console.log('Days since start: ' + daysSinceStart);
+
+
+		// Calculate the number of days remaining until the target date
+		const timeDifference = targetDate.getTime() - today.getTime();
+		let daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+		// console.log('Days remaining before extra days taken off: ' + daysRemaining);
+
+		daysRemaining = daysRemaining - extraDays - daysSinceStart;
+
+		// console.log('Days remaining: ' + daysRemaining);
+
+		$('.home__request__text__counter span').text(daysRemaining);
+
+
+	}	
+
+
+	
 });
 

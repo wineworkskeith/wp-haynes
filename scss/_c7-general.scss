@@ -1,0 +1,98 @@
+.c7-link,
+button.c7-link{
+    text-decoration: underline;
+    padding: 0;
+    font-weight: normal;
+    font-family: $body-font-family;
+    font-size: 12px;
+    line-height: 15px;
+
+    &:focus,&:hover,&:active{
+        background: transparent;
+        color: $black;
+    }
+}
+
+.c7-user-nav__account__dropdown__header{
+    text-transform: none;
+}
+
+.c7-user-nav__account__dropdown ul{
+    font-size: 13px;
+    font-family: $title-font-family;
+}
+
+.c7-link.c7-user-nav__account__dropdown__logout{
+    font-size: 13px;
+    font-family: $title-font-family;
+}
+
+.c7-modal{
+    border: 1px solid $black;
+
+    .c7-modal__content{
+        padding: 0 20px 20px;
+    }
+
+    .c7-modal__header{
+        padding: 30px 20px 20px;
+
+        button{
+            color: $black;
+            background: transparent;
+            position: relative;
+            top: -10px;
+
+            &:hover,&:focus,&:active{
+                color: $black;
+                background: transparent;
+            }
+        } // close button
+    } // modal header
+
+    .c7-modal__content h1.c7-h1, 
+    .c7-modal__header h1.c7-h1{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+    }
+} // c7 modal
+
+.c7-account__menu a{
+    text-transform: uppercase;
+    font-family: $title-font-family;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+}
+
+.c7-user-nav__account__name{
+    svg{
+        display: none;
+    }
+}
+
+.c7-account__logout_link{
+    margin-left: 14px;
+
+    @media #{$small-only}{
+        display: none;
+    }
+}
+
+h1.c7-h1, .c7-account__header p:first-of-type{
+    font-size: 20px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.c7-notice--empty{
+    margin: 40px 0 80px;
+}
+
+.c7-account-details__header{
+    @media #{$small-only}{
+        flex-direction: column;
+    }
+}

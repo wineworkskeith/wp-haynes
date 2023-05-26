@@ -12,5 +12,10 @@
 
 	<body <?php body_class(); ?> id="top">
 		<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
-
+		<header class="header">
+			<a href="/" class="home__request__header__logo">
+				<?php get_template_part( 'template-parts/header/logo' ); ?>
+			</a><!--logo-->
+			<div id="c7-account"></div>
+		</header>
 		<main id="content">

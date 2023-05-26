@@ -1,0 +1,95 @@
+body.error404{
+    font-size: 0;
+    // header.header{
+    //     position: absolute;
+    //     z-index: 3;
+    //     left: 5%;
+
+    //     @media #{$medium-up}{
+    //         left: 1%;
+    //     }
+    // }
+
+    .four-oh-four-image{
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        font-size: 0;
+
+        @media screen and (min-width: 901px){
+            width: 50%;
+        }
+
+        img{
+            width: 100%;
+            height: 100% !important;
+            object-fit: cover;
+        }
+    }
+
+    .four-oh-four-text{
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: 40vh;
+        text-align: center;
+        width: 100%;
+
+        @media screen and (min-width: 901px){
+            top: 50vh;
+        }
+
+        > div{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            @media screen and (min-width: 901px){
+                flex-direction: row;
+            }
+        }
+    }
+    
+    .alt-button{
+        margin-top: 22vw;
+
+        @media screen and (min-width: 901px){
+            margin-top: 0;
+            margin-left: 40px;
+        }
+    } // alt-button
+
+    h1{
+        font-family: $script-font-family;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 74px;
+        line-height: 74px;
+        letter-spacing: 0.01em;
+        margin: 0;
+
+        @media screen and (min-width: 901px){
+            margin: 0 0 0 159px;
+        }
+
+        @media screen and (max-width: 900px){
+            width: min-intrinsic;
+            width: -webkit-min-content;
+            width: -moz-min-content;
+            width: min-content;
+            display: table-caption;
+            display: -ms-grid;
+            -ms-grid-columns: min-content;
+        }
+    } // h1
+
+    footer{
+        display: none;
+    }
+
+} // 404 page

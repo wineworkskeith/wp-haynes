@@ -1,0 +1,35 @@
+label,
+.c7-form label:not(.c7-radio, .c7-checkbox, .duet-date__mobile-heading), 
+.c7-label, 
+.c7-form legend{
+    font-family: $title-font-family;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding-bottom: 9px;
+}
+
+.c7-form .c7-checkbox, 
+.c7-form .c7-radio{
+    font-size: 10px;
+    line-height: 25px;
+}
+
+.c7-form input[type="text"], 
+.c7-form input[type="email"],
+.c7-form input[type="number"], 
+.c7-form input[type="tel"], 
+.c7-form input[type="username"], 
+.c7-form input[type="password"], 
+.c7-form textarea, .c7-form--stripe, 
+.c7-order-item input, .c7-form select, 
+.c7-order-item select{
+
+}
+
+.c7-date-picker-toggle,.c7-form input[type="text"], .c7-form input[type="email"], .c7-form input[type="number"], .c7-form input[type="tel"], .c7-form input[type="username"], .c7-form input[type="password"], .c7-form textarea, .c7-form--stripe, .c7-order-item input, .c7-form select, .c7-order-item select{
+    height: 35px;
+    padding: 7px 10px;
+}

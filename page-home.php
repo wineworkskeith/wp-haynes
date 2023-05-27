@@ -6,8 +6,14 @@
 		<a href="/" class="home__video__logo">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/logos/logo-white.svg" alt="<?php echo get_bloginfo('name'); ?>">
 		</a><!--home__video__logo-->
-		<img class="home__video__desktop" src="<?php echo get_template_directory_uri(); ?>/images/home/video_placeholder_desktop.png" alt="Haynes Vineyard">
-		<img class="home__video__mobile" src="<?php echo get_template_directory_uri(); ?>/images/home/video_placeholder_mobile.png" alt="Haynes Vineyard">
+		<video class="home__video__desktop"  alt="Haynes Vineyard" webkit-playsinline allowsInlineMediaPlayback autoplay muted>
+			<source src="<?php echo get_template_directory_uri(); ?>/videos/desktop.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+		<video class="home__video__mobile" alt="Haynes Vineyard" webkit-playsinline allowsInlineMediaPlayback autoplay muted>
+			<source src="<?php echo get_template_directory_uri(); ?>/videos/mobile.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
 	</section><!--home__video-->
 
 	<section class="section black-bg home__stack">
